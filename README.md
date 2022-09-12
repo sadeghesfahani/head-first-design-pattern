@@ -203,4 +203,72 @@ class RangeCharacter(ABC, Character):
 کاری نداشت که. ولی صبر کن ببینم. یعنی الان باید برم این تغییر رو توی ۴۸ تا مدل کارکتری که ساختم پیاده کنم؟ آقا من نیستم خداحافظ.
 
 
+## اصل اول: کامپوزیشن را به ارث بری ترجیح بده
 
+خب به نظرم این شیوه طراحی اصلا خوب نبود. بذارید دوباره از اول فکر کنیم. ما باید تمام آن چیز هایی که ثابت هستند رو یکجا نگه داریم و متغییر هارو جدا کنیم. خب ما میدونیم که همه کارکتر های ما یک رفتاری به نام حمله یا اتک دارند. اگر ما به جای ارث بری و ساخت کلاس های جدید، رفتار های مختلف حمله رو کلاس بندی کنیم چی؟
+
+مثلا یه چیزی توی این مایه ها:
+
+```
+class AttachBehavior(ABC):
+    
+    @abstractmethod
+    def attack(self):
+        pass
+```
+
+بعدش بیاییم رفتار های مختلف رو بسازیم:
+
+```
+class RangeAttack(AttachBehavior):
+
+    def __init__(self, range, accuracy, weather_influence_factor):
+        self._range = range
+        self._accuracy = accuracy
+        self._weather_influence_factor = weather_influence_factor
+
+    def attack(self):
+        print(f'Attacks with a bow. Range: {self._range}, Accuracy: {self._accuracy} with the weather influence factor of {self._weather_influence_factor}')
+
+
+class MelleAttack(AttachBehavior):
+
+    def __init__(self, damage_power):
+        self.damage_power = damage_power
+
+    def attack(self):
+        print(f'Attacks with a sword. damage power: {self.damage_power}')
+
+```
+
+اینطوری میتونم خیلی راحت به هر کارکتر یک رفتار نسبت بدم و در آینده اگر بخوام تغییری توی اون رفتار ایجاد کنم دیگه نیازی نیست توی تک تک کلاس هام اینکارو بکنم. بریم با هم ببینیم:
+
+```
+class Archer(Character):
+
+    def __init__(self, name, level, attack_behavior):
+        super().__init__(name, level)
+        self._range = range
+        self.attack_behavior = attack_behavior
+
+    def attack(self):
+        self.attack_behavior.attack()
+
+    def move(self):
+        print(f'{self.name} moves slowly.')
+```
+خب بذارید بریم و ببینیم چطوری باید از این استفاده کنیم:
+
+```
+range_behavior = RangeAttack(10, 100, 0.5)
+archer = Archer('Sina', 1, range_behavior)
+
+archer.attack()
+```
+
+و خروجی ما:
+```
+Attacks with a bow. Range: 10, Accuracy: 100 with the weather influence factor of 0.5
+```
+
+به جای اینکه ما مستقیم ارث بری رو انجام بدیم و مجبور بشیم تغییرات اساسی رو توی مدل های کانکریتمون اعمال کنیم، هندل کردن این خصوصیت رو به کلاس دیگه واگذار کردیم و از خصوصیت به نام پولیمورفیزم در شی گرایی استفاده کردیم.
