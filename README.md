@@ -6,8 +6,8 @@
 درست حدس زدید این یک بازی خشن و پر از خون ریزیه.
 
 خب ما توی این بازی دو مدل مختلف کارکتر داریم، یکسری از کارکتر ها با شمشیر های بلند هستد و کارکتر های بعدی تیر و کمان دارن.
-![Melle]('images/condo_gua.png')
-![Archer]('images/imp_arc_post.png')
+![Melle]('https://github.com/sadeghesfahani/head-first-design-pattern/raw/main/images/condo_gua.png')
+![Archer]('https://github.com/sadeghesfahani/head-first-design-pattern/raw/main/images/imp_arc_post.png')
 
 خب حالا باییم یکم وارد کد نویسی بشیم.
 
