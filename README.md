@@ -179,3 +179,28 @@ class Knight(MelleCharacter):
         print(f'{self.name} moves quickly.')
 ```
 
+خیلی عالی شد، حالا میریم و ۴۸ مدل تیرانداز مختلف میسازیم. همه چیز داره عالی پیش میره تا اینکه میگیم صبر کن ببینم، اکر ما بخواییم خصوصیت آب و هوایی روی دقت و رنج تیر انداز ها تاثیر بذاره چی؟
+
+اووووم، بذار فکر کنم. آها کاری نداره که ما یه تاثیر آب و هوایی اضافه می کنیم به کلاس اصلی و خیلی راحت تاثیرشو توی اتک ها اعمال می کنیم. اینجوری:
+
+```
+class RangeCharacter(ABC, Character):
+    def __init__(self, name, level, range, accuracy, weather_influence_factor):
+        super().__init__(name, level)
+        self._range = range
+        self._accuracy = accuracy
+        self._weather_influence_factor = weather_influence_factor
+
+    @abstractmethod
+    def attack(self):
+        pass
+
+    @abstractmethod
+    def move(self):
+        pass
+```
+
+کاری نداشت که. ولی صبر کن ببینم. یعنی الان باید برم این تغییر رو توی ۴۸ تا مدل کارکتری که ساختم پیاده کنم؟ آقا من نیستم خداحافظ.
+
+
+
