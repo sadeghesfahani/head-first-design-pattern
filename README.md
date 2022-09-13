@@ -324,10 +324,10 @@ class Player:
 
     def send_message(self, message):
         if self.team == 1:
-            for player in War.team2:
+            for player in War.team1:
                 player.get_message(self, message)
         else:
-            for player in War.team1:
+            for player in War.team2:
                 player.get_message(self, message)
 
     def get_message(self, sender, message):
@@ -404,10 +404,10 @@ class Player:
 
     def send_chanel_message(self, message):
         if self.team == 1:
-            for player in War.team2:
+            for player in War.team1:
                 player.get_message(self, message)
         else:
-            for player in War.team1:
+            for player in War.team2:
                 player.get_message(self, message)
 
     def send_nearby_message(self, message):
