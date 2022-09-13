@@ -96,5 +96,5 @@ mahnaz.move([6, 6])
 samira.move([7, 7])
 maryam.move([8, 8])
 
-
+print([pl.hero for pl in maryam.nearby_players])
 maryam.send_nearby_message('Hello to all')
