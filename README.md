@@ -13,4 +13,4 @@
 
 [فصل دوم: الگو طراحی مشاهده کننده](https://github.com/sadeghesfahani/head-first-design-pattern/tree/main/observer)
 
-[فصل دوم: الگو طراحی دکوریتور](https://github.com/sadeghesfahani/head-first-design-pattern/tree/main/decorator)
+[فصل سوم: الگو طراحی دکوریتور](https://github.com/sadeghesfahani/head-first-design-pattern/tree/main/decorator)
