@@ -9,6 +9,6 @@
 
 
 
-[فصل اول: الگو طراحی استراتژی](https://github.com/sadeghesfahani/head-first-design-pattern/strategy)
+[فصل اول: الگو طراحی استراتژی](https://github.com/sadeghesfahani/head-first-design-pattern/tree/main/strategy)
 
-[فصل دوم: الگو طراحی مشاهده کننده](https://github.com/sadeghesfahani/head-first-design-pattern/observer)
+[فصل دوم: الگو طراحی مشاهده کننده](https://github.com/sadeghesfahani/head-first-design-pattern/tree/main/observer)
