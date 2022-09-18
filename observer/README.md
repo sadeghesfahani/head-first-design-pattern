@@ -11,7 +11,7 @@
 
 یکی از اولین نیاز ها برای هر بازی گروهی امکان چت کردن با هم تیمی هاست تا بتونیم خیلی راحت تاکتیک های مختلف رو پیش بگیریم و به دژ دشمن نفوذ کنیم. خب به نظرم که کاری نداری، بیایید برای هر بازی یک شی بسازیم تا ببینیم چی کار می تونیم باهاش بکنیم.
 
-```angular2html
+```python
 class War:
     team1 = []
     team2 = []
@@ -32,7 +32,7 @@ class War:
 
 با این کلاس خیلی راحت هر کسی که وارد مپ ما میشه به طور مساوی توی گروه های مختلف پخش میشه، حالا برای ارسال پیام به هم تیمی هاش کافیه روی تیم خودش یک حلقه بزنیم و پیام رو براشون ارسال کنیم. بریم ببینیم یعنی چی
 
-```angular2html
+```python
 class Player:
     def __init__(self, hero):
         self.hero = hero
@@ -52,7 +52,7 @@ class Player:
 
 خیلی آسون بود، نه؟ بریم ببینیم چطوری باید این کد رو اجرا کنیم؟
 
-```angular2html
+```python
 sina = Player('Sina')
 ali = Player('Ali')
 reza = Player('Reza')
@@ -70,7 +70,7 @@ sina.send_message('Hello to all')
 
 و نتیجه نهایی:
 
-```angular2html
+```python
 this is Ali message tab, Sina: Hello to all
 this is Mohammad message tab, Sina: Hello to all
 ```
@@ -82,7 +82,7 @@ this is Mohammad message tab, Sina: Hello to all
 بسیار خب، لازمه یکم توی کلاس جنگمون تغییر ایجاد کنیم.
 
 ### کلاس جنگ به کاربر ها اطلاعات میده 
-```angular2html
+```python
 class War:
     team1 = []
     team2 = []
@@ -112,7 +112,7 @@ class War:
 متد استاتیکی که اینجا اضافه کردیم وظیفش اینه که هر زمان هر کاربری تکون خورد، این جا به جایی رو به همه کاربرهای دیگه اطلاع بده تا بتونن بر اساس اون تصمیم گیری کنند. و حالا لازمه که کلاس پلیر رو هم یه تغییری بدیم تا بتونه با ساختار جدید کار کنه و به اطرافیانش پیام بده.
 
 ### کلاس پلیر اطلاعات رو میگیره و لیست اطرافیانش رو میسازه
-```angular2html
+```python
 class Player:
     def __init__(self, hero):
         self.hero = hero
@@ -164,7 +164,7 @@ class Player:
 
 بریم ببینیم چطوری باید از این ساختار جدید استفاده کنیم.
 
-```angular2html
+```python
 sina = Player('Sina')
 ali = Player('Ali')
 reza = Player('Reza')
@@ -205,7 +205,7 @@ maryam.send_nearby_message('Hello to all')
 
 خب حالا اگر این کد رو اجرا کنیم میبینیم که پیام هایی که مریم به اطرافیانش ارسال میکنه به همه اطرافیانش ارسال میشه و به همه غیر اطرافیانش نه. (ادبیات خودتون رو مسخره کنید کوپایلت پیشنهاد داد)
 
-```angular2html
+```
 Sina moves to [100, 100]
 Ali moves to [20, 20]
 Reza moves to [3, 3]
